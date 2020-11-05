@@ -3,27 +3,30 @@
     public class RatingEngine
     {
         // Hence Rate method still does what it does but we've delegated the how of Logging, Persistence etc. to other classes (SRP)
-        public ConsoleLogger Logger { get; set; } = new ConsoleLogger();
-        private readonly FilePolicySource _policySource = new FilePolicySource();
-        private readonly JsonPolicySerializer _policySerializer = new JsonPolicySerializer();
-
+        public IRatingContext Context { get; set; } = new DefaultRatingContext();
         public decimal Rating { get; set; }
+
+        public RatingEngine()
+        {
+            Context.Engine = this;
+        }
+
         public void Rate()
         {
-            Logger.Log("Starting rate.");
+            Context.Log("Starting rate.");
 
-            Logger.Log("Loading policy.");
+            Context.Log("Loading policy.");
 
-            string policyJson = _policySource.GetPolicyFromSource();
+            string policyJson = Context.LoadPolicyFromFile();
 
-            var policy = _policySerializer.GetPolicyFromJsonString(policyJson);
+            var policy = Context.GetPolicyFromJsonString(policyJson);
 
             var factory = new RaterFactory();
 
-            var rater = factory.Create(policy, this);
+            var rater = Context.CreateRaterForPolicy(policy, Context);
             rater.Rate(policy);
 
-            Logger.Log("Rating completed.");
+            Context.Log("Rating completed.");
         }
     }
 }

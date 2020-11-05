@@ -4,8 +4,8 @@ namespace PolicyRatingOrg.WithSolidPrinciples.PolicyTypeRaters
 {
     public class LifePolicyRater : Rater
     {
-        public LifePolicyRater(ConsoleLogger logger, RatingEngine engine)
-            : base(logger, engine)
+        public LifePolicyRater(IRatingContext context)
+            : base(context)
         {
         }
 
@@ -38,10 +38,10 @@ namespace PolicyRatingOrg.WithSolidPrinciples.PolicyTypeRaters
             decimal baseRate = policy.Amount * age / 200;
             if (policy.IsSmoker)
             {
-                _engine.Rating = baseRate * 2;
+                _context.UpdateRating(baseRate * 2);
                 return;
             }
-            _engine.Rating = baseRate;
+            _context.UpdateRating(baseRate);
         }
     }
 }

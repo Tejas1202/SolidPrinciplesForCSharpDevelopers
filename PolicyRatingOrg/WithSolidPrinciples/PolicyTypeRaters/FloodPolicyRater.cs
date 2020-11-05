@@ -2,8 +2,8 @@
 {
     public class FloodPolicyRater : Rater
     {
-        public FloodPolicyRater(ConsoleLogger logger, RatingEngine engine)
-            : base(logger, engine)
+        public FloodPolicyRater(IRatingContext context)
+            : base(context)
         {
         }
 
@@ -39,7 +39,7 @@
             {
                 multiple = 1.1m;
             }
-            _engine.Rating = policy.BondAmount * 0.05m * multiple;
+            _context.UpdateRating(policy.BondAmount * 0.05m * multiple);
         }
     }
 }

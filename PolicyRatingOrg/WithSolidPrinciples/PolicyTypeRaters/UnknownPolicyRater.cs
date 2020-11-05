@@ -2,8 +2,8 @@
 {
     public class UnknownPolicyRater : Rater
     {
-        public UnknownPolicyRater(ConsoleLogger logger, RatingEngine engine)
-            : base(logger, engine)
+        public UnknownPolicyRater(IRatingContext context)
+            : base(context)
         {
         }
 
