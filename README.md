@@ -8,3 +8,9 @@ In this course, SOLID Principles for C# Developers, you will learn five fundamen
 - Finally, you will explore how to arrange dependencies in your system so different implementations can be added or plugged in as needed, allowing a truly modular design. 
 
 When you are finished with this course, you will understand how to build maintainable, extensible, and testable applications using C# and .NET.
+
+Some Useful Links:
+For OCP:
+- https://hackernoon.com/why-the-open-closed-principle-is-the-one-you-need-to-know-but-dont-176f7e4416d
+- https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html
+- https://codeblog.jonskeet.uk/2013/03/15/the-open-closed-principle-in-review/

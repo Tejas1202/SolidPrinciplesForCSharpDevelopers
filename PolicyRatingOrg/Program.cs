@@ -1,5 +1,4 @@
-﻿using PolicyRatingOrg.WithoutSolidPrinciples;
-using System;
+﻿using System;
 
 namespace PolicyRatingOrg
 {
@@ -9,12 +8,25 @@ namespace PolicyRatingOrg
         {
             Console.WriteLine("Insurance Rating System Starting...");
 
-            var engine = new RatingEngine();
+            var engine = new WithoutSolidPrinciples.RatingEngine();
             engine.Rate();
 
             if (engine.Rating > 0)
             {
                 Console.WriteLine($"Rating: {engine.Rating}");
+            }
+            else
+            {
+                Console.WriteLine("No rating produced.");
+            }
+
+            Console.WriteLine("=======================================");
+
+            var engineTwo = new WithSolidPrinciples.RatingEngine();
+            engineTwo.Rate();
+            if (engineTwo.Rating > 0)
+            {
+                Console.WriteLine($"Rating: {engineTwo.Rating}");
             }
             else
             {

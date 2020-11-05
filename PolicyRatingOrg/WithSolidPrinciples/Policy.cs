@@ -29,5 +29,9 @@ namespace PolicyRatingOrg.WithSolidPrinciples
         public decimal Deductible { get; set; }
         #endregion
 
+        #region Flood
+        public int ElevationAboveSeaLevelFeet { get; set; }
+        #endregion
+
     }
 }

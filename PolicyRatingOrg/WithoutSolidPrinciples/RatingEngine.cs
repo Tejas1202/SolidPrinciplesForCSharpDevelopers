@@ -6,7 +6,8 @@ using System.IO;
 using System.Text;
 
 /// <summary>
-/// Here the Rating Engine has too many responsibilites like Logging, Persistance, Business Logic etc.
+/// Here the Rating Engine has too many responsibilites like Logging, Persistance, Business Logic etc. (violating SRP)
+/// In the future if any new policy is added, we've to add one case inside Rate method (violating OCP)
 /// </summary>
 namespace PolicyRatingOrg.WithoutSolidPrinciples
 {
