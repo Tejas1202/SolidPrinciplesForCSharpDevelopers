@@ -2,7 +2,7 @@
 
 namespace PolicyRatingOrg.WithSolidPrinciples
 {
-    public class FilePolicySource
+    public class FilePolicySource : IPolicySource
     {
         public string GetPolicyFromSource()
         {

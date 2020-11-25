@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PolicyRatingOrg.WithSolidPrinciples;
+using System;
 
 namespace PolicyRatingOrg
 {
@@ -22,7 +23,13 @@ namespace PolicyRatingOrg
 
             Console.WriteLine("=======================================");
 
-            var engineTwo = new WithSolidPrinciples.RatingEngine();
+            var logger = new ConsoleLogger();
+
+            var engineTwo = new RatingEngine(logger, 
+                new FilePolicySource(),
+                new JsonPolicySerializer(),
+                new RaterFactory(logger));
+
             engineTwo.Rate();
             if (engineTwo.Rating > 0)
             {

@@ -14,3 +14,9 @@ For OCP:
 - https://hackernoon.com/why-the-open-closed-principle-is-the-one-you-need-to-know-but-dont-176f7e4416d
 - https://blog.cleancoder.com/uncle-bob/2014/05/12/TheOpenClosedPrinciple.html
 - https://codeblog.jonskeet.uk/2013/03/15/the-open-closed-principle-in-review/
+
+For LSP:
+- https://ardalis.com/nulls-break-polymorphism/
+
+Some architectural guide
+- https://docs.microsoft.com/en-us/dotnet/architecture/modern-web-apps-azure/architectural-principles

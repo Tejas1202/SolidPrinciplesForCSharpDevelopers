@@ -1,0 +1,2 @@
+﻿This folder contains the files which were being used before applying DIP.
+Just kept here under Deprecated folder for reference as they're not being used anymore in this project 
